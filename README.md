@@ -1,15 +1,15 @@
-# 🚀 MadroxJS: A Developer-First Component Framework
+# 🚀 MeanwhileJS: A Developer-First Component Framework
 
-**MadroxJS** is a component-based framework designed to streamline UI development with ready-made tools and workflows. It’s not just a collection of components—it’s an **example-driven, flexible architecture** that encourages you to explore and learn from the built-in design, all while being loose enough to adapt to your specific needs.
+**MeanwhileJS** is a component-based framework designed to streamline UI development with ready-made tools and workflows. It’s not just a collection of components—it’s an **example-driven, flexible architecture** that encourages you to explore and learn from the built-in design, all while being loose enough to adapt to your specific needs.
 
 ## 🎯 Key Features
 
-* **Built-in examples**: MadroxJS isn't just a template; it’s a living example of how to build your own components. Every component in the template is designed to teach you how things work so you can customize, extend, and create your own.
+* **Built-in examples**: MeanwhileJS isn't just a template; it’s a living example of how to build your own components. Every component in the template is designed to teach you how things work so you can customize, extend, and create your own.
 Flexible structure: While the folder structure is clean and intuitive, it's just a suggestion. You have the freedom to organize your project as you see fit.
-* **Component library**: Install reusable components in your own project via npm install @madroxjs/madroxjs.
+* **Component library**: Install reusable components in your own project via npm install @meanwhilejs/meanwhile.
 * **Self-contained micro-frontends (MFE)**: Try components remotely without installation, offering a dynamic playground for new features.
 * **MDX-powered content**: Write both your application content and documentation with MDX, blending Markdown and JSX.
-Page-based routing: MadroxJS uses a page-level routing system where routes are controlled as static variables within each page component.
+Page-based routing: MeanwhileJS uses a page-level routing system where routes are controlled as static variables within each page component.
 
 ## 🎯 Why Madrox?
 
@@ -26,7 +26,7 @@ Page-based routing: MadroxJS uses a page-level routing system where routes are c
 Madrox can be easily integrated into your project:
 
 ```
-npm install @madroxjs/madroxjs
+npm install @meanwhilejs/meanwhile
 ```
 
 ### 2. 💡 **Extended Components**
@@ -34,7 +34,7 @@ npm install @madroxjs/madroxjs
 Madrox extends components from popular libraries like **ShadCN/UI** and **Animata**, providing additional variants, flexibility, and customization options. This means you get pre-built components from trusted libraries, but with added enhancements tailored to your specific needs.
 
 ```
-import { Button } from "@madroxjs/madroxjs";
+import { Button } from "@meanwhilejs/meanwhile";
 
 export const MyCustomButton = () => <Button variant="primary">Click Me!</Button>;
 ```
@@ -93,14 +93,14 @@ Madrox is built on top of several modern tools and libraries:
 To get started, install Madrox into your project:
 
 ```bash
-npm install @madroxjs/madroxjs
+npm install @meanwhilejs/meanwhile
 ```
 
 Once installed, you can explore the extended components or even create your own using the CLI.
 
 You can also explore and experiment with components in the Storybook documentation:
 
-- [Storybook Documentation](https://madroxjs.github.io/madroxjs/docs/)
+- [Storybook Documentation](https://meanwhile.github.io/meanwhilejs/docs/)
 
 ---
 

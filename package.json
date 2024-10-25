@@ -1,9 +1,9 @@
 {
-  "name": "madroxjs",
+  "name": "meanwhilejs",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://madroxjs.github.io/madroxjs",
+  "homepage": "https://meanwhilejs.github.io/meanwhile",
   "bin": {
     "m": "./bin/m/bin/index.mjs"
   },

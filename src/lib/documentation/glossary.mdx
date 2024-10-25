@@ -64,9 +64,9 @@ TypeScript's powerful type inference can infer types based on usage, and you can
 type ReturnType<T> = T extends (...args: any[]) => infer R ? R : never;
 ```
 
-### Metaprogramming Use Cases in MadroxJS
+### Metaprogramming Use Cases in Meanwhile
 
-In a component library like MadroxJS, metaprogramming plays an essential role in making the library flexible, reusable, and type-safe. Here's how:
+In a component library like Meanwhile, metaprogramming plays an essential role in making the library flexible, reusable, and type-safe. Here's how:
 
 - **Flexible Component Types**: Using generics and conditional types, components can be designed to accept dynamic types, making them reusable across different contexts.
   
@@ -78,12 +78,12 @@ In a component library like MadroxJS, metaprogramming plays an essential role in
 
 ---
 
-### Examples in MadroxJS
+### Examples in Meanwhile
 
 #### Example 1: Conditional Types for Dynamic Variants
 <small>Source: <a href="https://www.typescriptlang.org/docs/handbook/2/conditional-types.html">Conditional Types in TypeScript</a></small>
 
-In MadroxJS, you might have components that have dynamic variants (e.g., button styles). Using TypeScript's conditional types, these variants can be enforced through types.
+In Meanwhile, you might have components that have dynamic variants (e.g., button styles). Using TypeScript's conditional types, these variants can be enforced through types.
 
 ```typescript
 type ButtonVariant = 'primary' | 'secondary' | 'outline';

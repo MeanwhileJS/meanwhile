@@ -67,7 +67,7 @@ export const Content = () => <>
     {/* End Title */}
     <div className="mt-5 max-w-3xl text-center mx-auto">
       <p className="text-xl text-muted-foreground">
-      Welcome to <b>MadroxJS</b> - the modular, scalable, and customizable front-end setup for building modern web applications. Whether you're starting a new project or looking to scale an existing one, MadroxJS provides the tools and components you need to create efficient, high-performance web applications.
+      Welcome to <b>Meanwhile</b> - the modular, scalable, and customizable front-end setup for building modern web applications. Whether you're starting a new project or looking to scale an existing one, Meanwhile provides the tools and components you need to create efficient, high-performance web applications.
       </p>
     </div>
     {/* Buttons */}
