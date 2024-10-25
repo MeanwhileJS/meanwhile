@@ -15,14 +15,12 @@
     "build:local": "cross-env NODE_ENV=staging webpack --config webpack.config.mjs",
     "serve": "http-server dist",
     "start": "cross-env NODE_ENV=development webpack --config webpack.config.mjs && http-server dist",
-    "dev": "webpack serve --config webpack.config.mjs",
+    "dev": "cross-env NODE_ENV=development webpack serve --config webpack.config.mjs",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "storybook": "cross-env mode=storybook storybook dev -p 7001",
-    "preview": "cross-env mode=production vite preview",
     "build:storybook": "cross-env mode=production storybook build",
-    "build:both": "webpack --config webpack.config.mjs | npm run build:storybook",
+    "build:both": "npm run build | npm run build:storybook",
 
-    "postbuild": "node generate-main-css.mjs",
     "test": "jest --coverage",
     "test:dev": "jest --coverage -u src/components/ThirdParty/ShadCn/Alert"
   },
