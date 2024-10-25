@@ -14,8 +14,8 @@ const { ModuleFederationPlugin } = container;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Try the environment variable, otherwise use root
-const ASSET_PATH = process.env.ASSET_PATH || '/madroxjs/';
+const isProduction = process.env.NODE_ENV === 'production';
+const ASSET_PATH = isProduction ? '/madroxjs/' : '';
 
 const packageJson = await import('./package.json', {
   with: { type: "json" },
