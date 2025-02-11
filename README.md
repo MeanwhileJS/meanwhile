@@ -9,7 +9,7 @@ Flexible structure: While the folder structure is clean and intuitive, it's just
 * **Component library**: Install reusable components in your own project via npm install @meanwhilejs/meanwhile.
 * **Self-contained micro-frontends (MFE)**: Try components remotely without installation, offering a dynamic playground for new features.
 * **MDX-powered content**: Write both your application content and documentation with MDX, blending Markdown and JSX.
-Page-based routing: MeanwhileJS uses a page-level routing system where routes are controlled as static variables within each page component.
+* Page-based routing: MeanwhileJS uses a page-level routing system where routes are controlled as static variables within each page component.
 
 ## 🎯 Why Madrox?
 
