@@ -11,7 +11,7 @@ Flexible structure: While the folder structure is clean and intuitive, it's just
 * **MDX-powered content**: Write both your application content and documentation with MDX, blending Markdown and JSX.
 * Page-based routing: MeanwhileJS uses a page-level routing system where routes are controlled as static variables within each page component.
 
-## 🎯 Why Madrox?
+## 🎯 Why Meanwhile?
 
 - **Installable via NPM**: Quickly integrate Madrox into any project with one command.
 - **Extending Existing Libraries**: Built on top of popular libraries like **ShadCN/UI**, **Animata**, and more, giving you tried-and-tested components with additional flexibility and extensions.
