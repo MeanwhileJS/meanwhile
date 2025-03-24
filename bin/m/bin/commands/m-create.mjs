@@ -12,7 +12,7 @@ const program = new Command();
 
 program
     .name('create')
-    .description('CLI command to generate something for a madrox project.')
+    .description('CLI command to generate something for a meanwhile project.')
     .argument('type', 'type of component or w/e.')
     .argument('nameOfThing', 'Name of thing.')
     .option('-d, --docs', 'Whether to generate documentation.')
