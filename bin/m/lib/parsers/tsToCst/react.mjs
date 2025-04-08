@@ -97,18 +97,17 @@ const getTypeName = (typeNode) => {
 // Function to extract only the direct members of the interface
 export const extractDirectProps = (interfaceNode) => {
     let props = {};
-    if(ts.isInterfaceDeclaration(interfaceNode)) {
-      // Loop through all members of the interface
-      interfaceNode.members.forEach(member => {
-        if (ts.isPropertySignature(member) && member.name) {
-          const propName = member.name.text;
-          props[propName] = {
-              type: getTypeName(member.type),
-              isRequired: !member?.questionToken
-          }
+  
+    // Loop through all members of the interface
+    interfaceNode.members.forEach(member => {
+      if (ts.isPropertySignature(member) && member.name) {
+        const propName = member.name.text;
+        props[propName] = {
+            type: getTypeName(member.type),
+            isRequired: !member?.questionToken
         }
-      });
-    }
+      }
+    });
   
     return props;
   };

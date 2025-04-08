@@ -8,35 +8,32 @@ import { __projectroot } from '../../lib/utils.mjs'
 // import { generateUnitTestAST } from '../../templates/unitTest/ast.mjs'
 // import { getComponentPropsAndVariants } from '../../lib/helpers/parsing/react/tsx/index.mjs'
 
-import { generateCstFromTsx } from '../../lib/parsers/tsToCst/index.mjs'
+import { generateCST } from '../../lib/parsers/tsToCst/index.mjs'
 import { generateUnitTestFromCst } from '../../lib/generators/tests/unit.mjs'
 
 
 const program = new Command();
 
-const generateCommand = async (type, relativeComponentPath) => {
-  switch (type) {
-    case 'unit': generateUnitTestCommand(relativeComponentPath);
-      break
-  }
-}
-
-const generateUnitTestCommand = async (relativeComponentPath) => {
+const generateUnitTestCommand = async (type, relativeComponentPath) => {
   const pascalComponentPath = relativeComponentPath
   const componentPath = join(__projectroot, 'src', 'components', pascalComponentPath)
   await fs.ensureDir(path.resolve(`${componentPath}/tests`))
 
   const fullUnitTestPath = join(componentPath, 'tests', 'unit.tsx')
   
-  const cst = await generateCstFromTsx(componentPath)
-  .catch(e => {
-    console.error('CST generation failed:', e.message, e.stack)
-  })
-  console.log(cst)
-
-  // const sourceCodeForUnitTest  = await generateUnitTestFromCst(cst).catch(e => {
+  const cst = await generateCST(componentPath)
+  // console.log(cst.components.Atom.props)
+  // .catch(e => {
+  //   console.error('CST generation failed:', e.message)
+  // })
+  // const testsSlashUnitTestDotTsxSourceCode  = await generateUnitTestFromCst(cst).catch(e => {
   //   console.error('unit.tsx source code generation failed:', e.message)
   // })
+
+
+
+
+  // console.log(testsSlashUnitTestDotTsxSourceCode)
 
 
   // const components = await getComponentPropsAndVariants(componentFolderPath);
@@ -59,6 +56,6 @@ program
   .argument('type', 'type of thing to generate.')
   .argument('componentPath', 'Path to the component folder from src/components/.')
   .description('Generate unit tests for component props and variants')
-  .action(generateCommand);
+  .action(generateUnitTestCommand);
 
 program.parse();

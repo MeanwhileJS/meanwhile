@@ -1,13 +1,13 @@
 import { ReactElement } from "react";
+import { RouteObject, RouteProps } from "react-router-dom";
 
 /** 
  * Type definition for a React component used as a page with React-Router. 
  */
 export type PageComponentType = React.FC & {
   /** Function signature that returns a React element. */
-  (): ReactElement;
-
-  /** The path name associated with the route for this page component. */
-  path?: string;
+  (): Promise<ReactElement> | ReactElement;
+  /** The route for this page component. */
+  route?: RouteObject | RouteProps;
 };
 

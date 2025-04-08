@@ -6,6 +6,12 @@ import process from 'process'
 
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+import remarkSlug from 'remark-slug';
+import remarkAutolinkHeadings from 'remark-autolink-headings';
+import { createRequire } from 'module';
+
+// Use `createRequire` to import CommonJS modules like `require.resolve`
+const require = createRequire(import.meta.url);
 
 const { container } = pkg;
 const { ModuleFederationPlugin } = container;
@@ -32,6 +38,10 @@ export default {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.mjs'],
     alias: {
       '@': path.resolve(__dirname, 'src'),
+    },
+    fallback: {
+      stream: require.resolve("stream-browserify"),
+      process: require.resolve("process"),
     },
   },
   module: {
@@ -75,34 +85,39 @@ export default {
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.(png|jpe?g|gif|svg|ogm|mp4|webm|ogg)$/i,
+        test: /\.(png|jpe?g|gif|svg|ogm|mp4|webm|ogg|pdf)$/i,
         type: 'asset/resource',
+        generator: {
+          filename: 'assets/[name][ext][query]', // Ensures all assets go into an 'assets/' folder
+        },
       },
       {
         test: /\.mdx?$/,
         use: [
           'babel-loader',
-          '@mdx-js/loader',
+          {
+            loader: '@mdx-js/loader',
+            options: {
+              remarkPlugins: [
+                remarkSlug,
+                [
+                  remarkAutolinkHeadings,
+                  {
+                    behavior: 'append',
+                    linkProperties: {
+                      className: ['anchor'],
+                    },
+                  },
+                ],
+              ],
+            },
+          },
         ],
       },
       {
         resourceQuery: /raw/,
         type: 'asset/source',
-      },
-      {
-      test: /\.(png|jpe?g|gif|svg|ogm|mp4|webm|ogg)$/i,
-      use: [
-        {
-          loader: 'file-loader',
-          options: {
-            name: '[name].[ext]',
-            outputPath: 'assets/',
-            publicPath: 'assets/'
-          }
-        }
-      ]
-    }
-
+      }
     ],
   },
   plugins: [
@@ -134,6 +149,10 @@ export default {
     new pkg.DefinePlugin({
       'process.env.ASSET_PATH': JSON.stringify(ASSET_PATH),
     }),
+    new pkg.ProvidePlugin({
+      process: 'process',
+    }),
+
 
   ],
   devServer: {

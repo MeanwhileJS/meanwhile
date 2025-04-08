@@ -1,11 +1,10 @@
 import ts from 'typescript'
 import { arrowFunction } from '../typescript.mjs'
-import process from 'process'
 
 export const generateUnitTestFromCst = async ({ ...cst }) => {
-    // const mocks = Object.entries(cst.imports).map(([location, libraries]) => {
-    //     return mockExpression({location, libraries})
-    // })
+    const mocks = Object.entries(cst.imports).map(([location, libraries]) => {
+        return mockExpression({location, libraries})
+    })
 }
 
 export const describeExpression = (description, customArrowFunction, childDescribes = []) => {
