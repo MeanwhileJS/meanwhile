@@ -2,6 +2,7 @@
 
 **MeanwhileJS** is a component-based framework designed to streamline UI development with ready-made tools and workflows. It’s not just a collection of components—it’s an **example-driven, flexible architecture** that encourages you to explore and learn from the built-in design, all while being loose enough to adapt to your specific needs.
 
+
 ## 🎯 Key Features
 
 * **Built-in examples**: MeanwhileJS isn't just a template; it’s a living example of how to build your own components. Every component in the template is designed to teach you how things work so you can customize, extend, and create your own.
